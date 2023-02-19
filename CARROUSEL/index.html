@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <script src="js/jquery-3.6.3.js"></script>
+    <title>Carrusel JQuery</title>
+    <style>
+        .contenedor-main{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+        }
+        .contenedor-main button{
+            background-color: black;
+            color: cornflowerblue;
+            border-radius: 50%;
+            vertical-align: middle;
+            align-self: center;
+            height: fit-content;
+            cursor: pointer;
+        }
+        .contenedor-main button i {
+            /*3vw --> 3% del ancho del 'viewport' (pantalla visible)*/
+            font-size: 3vw;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+        .controles{
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-self: center;
+        }
+        .cont-dinamico img{
+            width: 100%;
+            height: auto;
+        }
+        .reload {
+            float: right;
+            font-size: 18px;
+            color: gray;
+        }
+        .reload:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        /*Estilos input radio*/
+        .controles input:checked {
+            opacity: 1;
+            background-color: greenyellow;
+            scale: 100%;
+        }
+        .controles input {
+            opacity: 0.8;
+            background-color: gray;
+            scale: 150%;
+            /*Evitar la seleccion al hacer click*/
+            -moz-user-select: -moz-none;
+            -khtml-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor-main">
+        <!--Aquí los botones-->
+        <button type="button" id="backBTN"><i class="material-icons">arrow_back</i></button>
+        <div class="cont-dinamico">
+            <a class="reload" id="reloadInt" title="Reiniciar automático">
+                <span class="material-icons">update</span>
+            </a>
+            <!--Aqui irán las imágenes-->
+        </div>
+        <button type="button" id="forwBTN"><i class="material-icons">arrow_forward</i></button>
+    </div>
+    <div class="controles">
+            <!--Insertamos inputs de tipo Radio, con el mismo nombre-->
+            <!--Sus value, apuntarán al nombre de la imágen seleccionada-->
+    </div>
+    <script src="js/movimiento.js"></script>
+</body>
+</html>
